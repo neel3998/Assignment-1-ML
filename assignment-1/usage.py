@@ -16,7 +16,7 @@ from metrics import *
 np.random.seed(42)
 # Test case 1
 # Real Input and Real Output
-
+print("Testcase1")
 N = 30
 P = 5
 X = pd.DataFrame(np.random.randn(N, P))
@@ -34,7 +34,7 @@ for criteria in ['information_gain', 'gini_index']:
 
 # Test case 2
 # Real Input and Discrete Output
-
+print("Testcase2")
 N = 30
 P = 5
 X = pd.DataFrame(np.random.randn(N, P))
@@ -54,11 +54,11 @@ for criteria in ['information_gain', 'gini_index']:
 
 # Test case 3
 # Discrete Input and Discrete Output
-
+print("Testcase3")
 N = 30
 P = 5
 X = pd.DataFrame({i:pd.Series(np.random.randint(P, size = N), dtype="category") for i in range(5)})
-y = pd.Series(np.random.randint(P, size = N), , dtype="category")
+y = pd.Series(np.random.randint(P, size = N),  dtype="category")
 
 for criteria in ['information_gain', 'gini_index']:
     tree = DecisionTree(criterion=criteria) #Split based on Inf. Gain
@@ -73,7 +73,7 @@ for criteria in ['information_gain', 'gini_index']:
 
 # Test case 4
 # Discrete Input and Real Output
-
+print("Testcase4")
 N = 30
 P = 5
 X = pd.DataFrame({i:pd.Series(np.random.randint(P, size = N), dtype="category") for i in range(5)})

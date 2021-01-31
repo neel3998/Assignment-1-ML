@@ -22,11 +22,13 @@ P = 5
 X = pd.DataFrame(np.random.randn(N, P))
 y = pd.Series(np.random.randint(P, size = N), dtype="category")
 
-for criteria in ['information_gain', 'gini_index']:
+for criteria in ['entropy', 'gini']:
     Classifier_RF = RandomForestClassifier(10, criterion = criteria)
     Classifier_RF.fit(X, y)
     y_hat = Classifier_RF.predict(X)
-    Classifier_RF.plot()
+   # print(pd.Series(y))
+    #print(pd.Series(y_hat))
+   # Classifier_RF.plot()
     print('Criteria :', criteria)
     print('Accuracy: ', accuracy(y_hat, y))
     for cls in y.unique():
@@ -39,11 +41,11 @@ N = 30
 P = 5
 X = pd.DataFrame(np.random.randn(N, P))
 y = pd.Series(np.random.randn(N))
-
+criteria='mse'
 Regressor_RF = RandomForestRegressor(10, criterion = criteria)
 Regressor_RF.fit(X, y)
 y_hat = Regressor_RF.predict(X)
-Regressor_RF.plot()
+#Regressor_RF.plot()
 print('Criteria :', criteria)
 print('RMSE: ', rmse(y_hat, y))
 print('MAE: ', mae(y_hat, y))
