@@ -64,7 +64,7 @@ ytest=pd.Series(y[a:],dtype=y.dtype)
 
 ###############Implementing on Iris Data Set
 for criteria in ["information_gain",'gini_index']:
-    tree = DecisionTree(criterion=criteria, max_depth=3)
+    tree =  AdaBoostClassifier(criterion=criteria, max_depth=3)
     
     tree.fit(Xtrain, ytrain)
     
@@ -83,7 +83,7 @@ for criteria in ["information_gain",'gini_index']:
 ###############################################
 ######Decision Stump#############
 ##################################
-Decision_stump = DecisionTree(criterion=criteria, max_depth =2)
+Decision_stump =  AdaBoostClassifier(criterion=criteria, max_depth =2)
 Decision_stump.fit(train_X,train_y)
 iris_stump = pd.Series(Decision_stump.predict(test_X))
 
